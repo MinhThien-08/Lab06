@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quay thưởng may mắn</h2>
+    <button onclick="quayThuong()">Quay thưởng</button>
+    <p id="result"></p>
+    <script>    
+        function quayThuong() {
+            const thuong = ["RTX 5070", "iPhone 18", "Apple Watch", "Razer Viper V4 Pro", "Chúc bạn may mắn lần sau"];
+            const randomThuong = thuong[Math.floor(Math.random() * thuong.length)];
+            document.getElementById("result").innerHTML = "Chúc mừng! Bạn đã trúng thưởng: " + randomThuong;
+        }
+    </script>
+</body>
+</html>

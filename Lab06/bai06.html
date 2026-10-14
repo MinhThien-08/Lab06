@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Trò chơi Oẳn tù tì</h2>
+        <button onclick="choi('Đá')">Đá</button>
+        <button onclick="choi('Giấy')">Giấy</button>
+        <button onclick="choi('Kéo')">Kéo</button><br>
+
+        <label id="lblNguoiDung">Người chơi chọn: </label><br>
+        <label id="lblMay">Máy chọn: </label><br>
+        <label id="lblKetQua">---Kết quả: ---</label>
+
+        <script>
+        function choi(nguoiChon) {
+            const luaChon = ['Đá', 'Giấy', 'Kéo'];
+            const mayChon = luaChon[Math.floor(Math.random() * 3)];
+            let ketQua = nguoiChon === mayChon ? "Hòa" : ((nguoiChon === 'Đá' && mayChon === 'Kéo') || (nguoiChon === 'Giấy' && mayChon === 'Đá') || (nguoiChon === 'Kéo' && mayChon === 'Giấy')) ? "Bạn thắng" : "Bạn thua";
+            
+            document.getElementById('lblNguoiDung').innerText = "Người chơi chọn: " + nguoiChon;
+            document.getElementById('lblMay').innerText = "Máy chọn: " + mayChon;
+            document.getElementById('lblKetQua').innerText = "Kết quả: " + ketQua;
+        }
+        </script>
+</body>
+</html>
